@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Now</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" type="text/css" href="book.css">
+</head>
+<body>
+  <nav>
+    <img class="logo1" src="./logo .jpg" title="DREAM_VACATION" />
+    <ul class="navbar">
+      <li><a href="./DREAM_VACATION.html">Home</a></li>
+      <li><a href="./destination.html">Destinations</a></li>
+      <li><a href="#package">Budget vs Luxury</a></li>
+      <li><a href="./pickyourvibe.html">Pick Your Vibe</a></li>
+      <li><a href="./about.html">Reviews</a></li>
+      <li><a href="./about.html">Map</a></li>
+      <li><a href="./contact.html">Book now</a></li>
+    </ul>
+  </nav>
+
+  <div class="contact-section">
+    <h2 class="h">Book Now!</h2>
+    <form action="https://formspree.io/f/mrbkgrab" method="POST">
+      <label>Full Name</label>
+      <input type="text" name="name" placeholder="Enter your name" required>
+
+      <label>Email Address</label>
+      <input type="email" name="email" placeholder="you@example.com" required>
+
+      <label>Phone Number</label>
+      <div class="phone-group">
+        <input type="text" class="cc" name="country_code" placeholder="+91" required>
+        <input type="tel" name="phone" placeholder="9876543210" required>
+      </div>
+
+      <label>Country</label>
+      <select name="country" required>
+        <option value="">-- Select Your Country --</option>
+        <option value="India">India</option>
+        <option value="USA">USA</option>
+        <option value="Canada">Canada</option>
+        <option value="Australia">Australia</option>
+        <option value="UK">UK</option>
+        <option value="France">France</option>
+        <option value="Germany">Germany</option>
+        <option value="Italy">Italy</option>
+        <option value="Japan">Japan</option>
+        <option value="Brazil">Brazil</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label>Other Country (if not listed above)</label>
+      <input type="text" name="other_country" placeholder="Enter your country (only if 'Other')" />
+
+      <label>Select your plan</label>
+      <select name="subject" required>
+        <option value="">-- Select a plan --</option>
+        <option value="beach">Beach Vacation</option>
+        <option value="luxury">Luxury Trip</option>
+        <option value="budget">Budget Travel</option>
+        <option value="honeymoon">Honeymoon</option>
+        <option value="family">Family Vacation</option>
+        <option value="custom">Custom Plan</option>
+      </select>
+
+      <label>Location</label>
+      <input type="text" name="location" placeholder="Enter Your Destination Place">
+
+      <label>Your Message</label>
+      <textarea name="message" placeholder="Let us know how we can help..." required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+  <section class="footer">
+    <div class="foot">
+      <div class="footer-content">
+        <img class="logo2" src="./logo .jpg" width="150px" height="60px" title="DREAM_VACATION" />
+        <div class="footlinks">
+          <h4>Connect:</h4>
+        </div>
+        <div class="social">
+          <a href="https://www.facebook.com/login.php/" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
+          <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
+          <a href="https://x.com/i/flow/login" target="_blank"><i class="fa-brands fa-square-x-twitter"></i></a>
+          <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-square-youtube"></i></a>
+          <a href="https://accounts.google.com/signin" target="_blank"><i class="fa-solid fa-square-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="end">
+      <p>Copyright © 2025 DREAM_VACATION_PLANNER All Rights Reserved.<br>
+        Website developed by team: 'WebWizards'</p>
+    </div>
+  </section>
+</body>
+</html>

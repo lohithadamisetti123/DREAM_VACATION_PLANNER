@@ -1,0 +1,258 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: linear-gradient(to right, rgba(150, 196, 146, 0.2),rgba(65, 241, 41, 0.2));
+}
+nav{
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    background-color:rgb(6, 33, 3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index:2;
+}
+
+ nav .logo1{
+    width: 180px;
+    margin-left:3%;
+}
+
+nav ul li{
+    display: inline-block;
+    margin-left: 40px;
+}
+.navbar{
+    display: flex;
+    margin-right: 4vh;
+}
+.navbar a{
+    background-color: rgb(14, 87, 14);
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 530;   
+    text-decoration: none;
+    transition: ease 0.40s;
+    font-family:sans-serif;
+}
+
+.navbar a:hover,.navbar a.active{
+    background: white;
+    color: rgb(9, 122, 43);
+    border-radius: 5px;
+    
+}
+nav ul li a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 17px;
+}
+.body {
+  margin-top: 90px;
+  padding: 20px;
+  flex: 1;
+}
+
+.content {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.content h1 {
+  font-size: 2rem;
+  color: rgb(6, 33, 3);
+  font-family: cursive;
+  margin-bottom: 10px;
+}
+
+.content p {
+  font-family: cursive;
+  color: rgba(6, 33, 3, 0.8);
+  font-size: 1rem;
+}
+
+.live {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.tour {
+  width: 300px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 6px rgba(43, 105, 37, 0.5);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.tour:hover {
+  transform: scale(1.05);
+}
+
+.tour img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.tour h4 {
+  margin-top: 15px;
+  color: #1b3a1b;
+}
+
+.tour p {
+  padding: 0 10px;
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.4;
+  margin-top: 10px;
+}
+.populartours {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+.populartours .tour {
+  width: 260px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 6px rgba(43, 105, 37, 0.5);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  text-align: center;
+  padding-bottom: 20px;
+  margin-bottom: 50px;
+}
+.content1 {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 50px;
+}
+
+.content1 h1 {
+  font-size: 2rem;
+  color: rgb(6, 33, 3);
+  font-family: cursive;
+  margin-bottom: 10px;
+}
+
+.content1 p {
+  font-family: cursive;
+  color: rgba(6, 33, 3, 0.8);
+  font-size: 1rem;
+}
+.trendingtours {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+.trendingtours .tour {
+  width: 260px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 6px rgba(43, 105, 37, 0.5);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  text-align: center;
+  padding-bottom: 20px;
+  margin-bottom: 50px;
+}
+.content2 {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top:0px;
+}
+
+.content2 h1 {
+  font-size: 2rem;
+  color: rgb(6, 33, 3);
+  font-family: cursive;
+  margin-bottom: 10px;
+}
+
+.content2 p {
+  font-family: cursive;
+  color: rgba(6, 33, 3, 0.8);
+  font-size: 1rem;
+}
+.footer{
+    background-color: rgb(2, 35, 17);
+ 
+    justify-content: center;
+    align-items: center;
+}
+
+.foot{
+     justify-content: center;
+    align-items: center;
+}
+ nav .logo2{
+    margin-left:20%;
+}
+.footer-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.footlinks h4{
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    margin-top:15px;
+    position: relative;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.logo2{
+    margin-top: 0%;
+}
+.social a{
+    font-size: 20px;
+    margin: 15px;
+    height: 30px;
+    width: 30px;
+    color: rgb(2, 35, 17);
+    background-color: white;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    transition: ease 0.30s;
+    text-decoration: none;
+}
+.social a:hover{
+    transform: scale(1.2);
+}
+.end{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 12px;
+}
+.end p{
+    font-size: 13px;
+    color: white;
+    letter-spacing: 1px;
+    font-weight: 700;
+    font-family: 'Courier New', Courier, monospace;
+}
+
