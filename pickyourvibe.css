@@ -1,0 +1,261 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #a8d5ba, #c7e5c0);
+      color: #333;
+      /* padding:30px; */
+      
+    }
+    .content{
+        overflow: hidden;
+        margin-bottom: 100px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 48px;
+      margin-bottom: 32px;
+      margin-top: 150px;
+      color: #1a3d1a;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+      font-family: cursive;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+      padding: 16px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      color: #333;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-header {
+      padding: 32px;
+      text-align: center;
+      color: white;
+    }
+
+    .card-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-bottom: 2px solid #ccc;
+    }
+
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+      
+    }
+
+    .card-content {
+      padding: 24px;
+      font-size: 16px;
+      line-height: 1.8;
+      color: #444;
+    }
+
+    .learn-more {
+      display: block;
+      margin-top: 16px;
+      color: #2e7d32;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .learn-more:hover {
+      text-decoration: underline;
+    }
+
+    /* header style */
+    
+ nav {
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  background-color: rgb(6, 33, 3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2vw;
+  z-index: 1000;
+
+}
+.logo1 {
+  width: 12vw;
+  min-width: 180px;
+  max-width: 180px;
+  height: auto;
+}
+.nav-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar a {
+  color: white;
+  font-size: 1rem;
+  font-weight: 530;
+  text-decoration: none;
+  transition: ease 0.40s;
+  font-family: sans-serif;
+  padding: 5px 6px;
+  border-radius: 4px;
+  min-width: max-content;
+  margin-top: 2%;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  background: white;
+  color: rgb(9, 122, 43);
+}
+
+.user {
+  color: white;
+  font-size: 3rem;
+  margin-left: auto;
+}
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .navbar a {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
+}
+
+/* footer styling */
+ .footer {
+  background-color: rgb(2, 35, 17);
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-content {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo2 {
+  margin-bottom: 20px;
+
+}
+
+.footer-columns {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.footlinks {
+  color: white;
+  text-align: left;
+  margin: 10px 20px;
+  min-width: 200px;
+}
+
+.footlinks h4 {
+  font-size: 30px;
+  font-weight: 500;
+ font-family: "Tapestry", serif;
+  margin-bottom: 10px;
+  margin-right: 40px;
+}
+
+.quick a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin: 15px 15px;
+}
+
+.contact div {
+  margin: 5px 0;
+  color: white;
+  padding: 5px;
+}
+.contact i{
+  padding: 10px;
+    font-size: 20px;
+}
+.social a {
+  font-size: 20px;
+  margin: 5px;
+  height: 30px;
+  width: 30px;
+  color: rgb(2, 35, 17);
+  background-color: white;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+}
+
+.social a:hover {
+  transform: scale(1.2);
+}
+
+.end {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.end p {
+  font-size: 13px;
+  color: white;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .footer-columns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footlinks {
+    text-align: center;
+    margin: 15px 0;
+  }
+}
