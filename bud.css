@@ -1,20 +1,26 @@
-
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 body {
   font-family: Arial, sans-serif;
   margin: 0px;
-  padding: 20px;
   background:#b7e4c7;
+  position: relative;
 }
 
 .title {
   text-align: center;
   margin-bottom: 30px;
-  margin-top: 170px;;
   font-size: 2.5em;
   color: 3a5a40;
    font-family: 'Aclonica';
    text-shadow: 0px 8px 8px 588157;
-
+   
+}
+.maincontent{
+  padding-top: 140px;;
 }
 
 .card {
@@ -22,12 +28,14 @@ body {
   background: white;
   margin: 40px auto;
   max-width: 900px;
-  height: 550px;;
+  height: 500px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   overflow: hidden;
   transition: transform 0.3s;
   position: relative;
+  margin-top: 100px;
+  overflow: auto;
 }
 
 .card:hover {
