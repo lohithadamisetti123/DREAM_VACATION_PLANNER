@@ -18,14 +18,15 @@
 
     nav {
       width: 100%;
-      height: 70px;
+      height: 90px;
       position: fixed;
       top: 0;
       left: 0;
       background-color: rgb(6, 33, 3);
       display: flex;
       align-items: center;
-      justify-content: space-around;
+      justify-content: space-between;
+      padding: 0 20px;
       z-index: 999;
     }
 
@@ -33,20 +34,22 @@
       width: 180px;
     }
 
-    .navbar {
-      list-style: none;
+    .nav-center {
+      flex-grow: 1;
       display: flex;
+      justify-content: center;
     }
 
-    .navbar li {
-      margin-left: 30px;
+    .navbar {
+      display: flex;
+      gap: 25px;
+      list-style: none;
     }
 
     .navbar a {
-      background-color: rgb(14, 87, 14);
       color: white;
       font-size: 16px;
-      padding: 10px 18px;
+      padding: 5px 5px;
       border-radius: 5px;
       font-weight: 530;
       text-decoration: none;
@@ -58,6 +61,32 @@
     .navbar a.active {
       background-color: white;
       color: rgb(9, 122, 43);
+    }
+
+    .user {
+      position: relative;
+      color: white;
+      cursor: pointer;
+      font-size: 30px;
+    }
+
+    .user .dropdown {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 30px;
+      background-color: rgb(14, 87, 14);
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: 500;
+      color: white;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .user:hover .dropdown {
+      display: block;
     }
 
     .map-container {
@@ -74,53 +103,87 @@
       border-radius: 10px;
     }
 
+    /* Footer */
     .footer {
       background-color: rgb(2, 35, 17);
-      padding: 30px 20px 10px;
+      padding: 40px 20px 20px;
       color: white;
       margin-top: 50px;
       width: 100%;
+      font-family: Arial, sans-serif;
     }
 
     .footer-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
     .logo2 {
-      width: 150px;
-      height: 60px;
-      margin-bottom: 10px;
+      width: 180px;
+      height: 80px;
       object-fit: contain;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .footer-columns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+      margin-bottom: 25px;
     }
 
     .footlinks h4 {
       font-size: 20px;
-      font-weight: 500;
-      margin: 15px 0 5px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .quick {
+      list-style: none;
+    }
+
+    .quick li {
+      margin-bottom: 8px;
+    }
+
+    .quick a {
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+      transition: color 0.3s ease;
+    }
+
+    .quick a:hover {
+      color: #8bc34a;
+    }
+
+    .contact div {
+      margin-bottom: 8px;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
     .social {
       display: flex;
-      justify-content: center;
       gap: 15px;
-      margin-top: 10px;
+      font-size: 22px;
     }
 
     .social a {
-      font-size: 20px;
-      height: 30px;
-      width: 30px;
       color: rgb(2, 35, 17);
       background-color: white;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-      text-decoration: none;
+      height: 35px;
+      width: 35px;
       transition: transform 0.3s ease;
+      text-decoration: none;
     }
 
     .social a:hover {
@@ -129,35 +192,53 @@
 
     .end {
       text-align: center;
-      margin-top: 20px;
-    }
-
-    .end p {
       font-size: 13px;
       color: white;
       letter-spacing: 1px;
       font-weight: 700;
       font-family: 'Courier New', Courier, monospace;
     }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .footer-columns {
+        flex-direction: column;
+        gap: 25px;
+      }
+      .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+    }
   </style>
 </head>
 <body>
 
+  <!-- Header -->
   <nav>
     <img class="logo1" src="./logo .jpg" title="DREAM_VACATION" />
-    <ul class="navbar">
-      <li><a href="./index.html">Home</a></li>
-      <li><a href="./destination.html">Destinations</a></li>
-      <li><a href="./budvslux.html">Budget vs Luxury</a></li>
-      <li><a href="./pickyourvibe.html">Pick Your Vibe</a></li>
-      <li><a href="./reviews.html">Reviews</a></li>
-      <li><a href="./map.html">Map</a></li>
-      <li><a href="./book.html">Book now</a></li>
-    </ul>
+
+    <div class="nav-center">
+      <div class="navbar">
+        <a href="./index.html">Home</a>
+        <a href="./destination.html">Destinations</a>
+        <a href="./budvslux.html">Budget vs Luxury</a>
+        <a href="./pickyourvibe.html">Pick Your Vibe</a>
+        <a href="./reviews.html">Reviews</a>
+        <a href="./map.html" >Map</a>
+        <a href="./book.html">Book now</a>
+      </div>
+    </div>
+
+    <div class="user">
+      <i class="fa-solid fa-circle-user"></i>
+      
+    </div>
   </nav>
 
+  <!-- Map -->
   <div class="map-container">
-    <!-- Replace this iframe src with your preferred location -->
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.456206086929!2d80.20866411482163!3d12.94854039086524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525d6eab7e603d%3A0x74957dc86dc7df89!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1685961012516"
       allowfullscreen=""
@@ -166,23 +247,50 @@
     </iframe>
   </div>
 
+  <!-- Footer -->
   <section class="footer">
-    <div class="foot">
-      <div class="footer-content">
-        <img class="logo2" src="./logo .jpg" width="150px" height="60px" title="DREAM_VACATION" />
-        <div class="footlinks"><h4>Connect:</h4></div>
-        <div class="social">
-          <a href="https://www.facebook.com/login.php/" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
-          <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
-          <a href="https://x.com/i/flow/login" target="_blank"><i class="fa-brands fa-square-x-twitter"></i></a>
-          <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-square-youtube"></i></a>
-          <a href="https://accounts.google.com/" target="_blank"><i class="fa-solid fa-square-envelope"></i></a>
+    <div class="footer-content">
+      <img class="logo2" src="./logo .jpg" width="180px" height="80px" title="DREAM_VACATION" />
+
+      <div class="footer-columns">
+        <div class="footlinks">
+          <h4>Quick Links:</h4>
+          <ul class="quick">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./destination.html">Destinations</a></li>
+            <li><a href="./budvslux.html">Budget vs Luxury</a></li>
+            <li><a href="./pickyourvibe.html">Pick Your Vibe</a></li>
+            <li><a href="./reviews.html">Reviews</a></li>
+            <li><a href="./map.html">Map</a></li>
+            <li><a href="./book.html">Book now</a></li>
+          </ul>
+        </div>
+
+        <div class="footlinks">
+          <h4>Contact us:</h4>
+          <div class="contact">
+            <div><i class="fa-solid fa-location-dot"></i> Jubilee Hills, Hyderabad</div>
+            <div><i class="fa-solid fa-phone"></i> +91 9876543219</div>
+            <div><i class="fa-solid fa-envelope"></i> dreamvacation@gmail.com</div>
+          </div>
+        </div>
+
+        <div class="footlinks">
+          <h4>Connect:</h4>
+          <div class="social">
+            <a href="https://www.facebook.com/login.php/" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
+            <a href="https://x.com/i/flow/login" target="_blank"><i class="fa-brands fa-square-x-twitter"></i></a>
+            <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-square-youtube"></i></a>
+            <a href="https://accounts.google.com/signin/v2/usernamerecovery" target="_blank"><i class="fa-solid fa-square-envelope"></i></a>
+          </div>
         </div>
       </div>
     </div>
+
     <div class="end">
-      <p>Copyright © 2025 DREAM_VACATION_PLANNER All Rights Reserved.
-        <br>Website developed by team: 'WebWizards'</p>
+      <p>Copyright © 2025 DREAM_VACATION_PLANNER All Rights Reserved.<br>
+        Website developed by team: 'WebWizards'</p>
     </div>
   </section>
 
