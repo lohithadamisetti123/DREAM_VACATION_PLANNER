@@ -1,61 +1,336 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Book Now</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" type="text/css" href="book.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tapestry&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, rgba(209, 231, 209, 0.5), rgba(106, 243, 106, 0.5));
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding-top: 100px;
+    }
+
+    nav {
+      width: 100%;
+      height: 80px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: rgb(6, 33, 3);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2vw;
+      z-index: 1000;
+    }
+
+    .logo1 {
+      height: 60px;
+      width: auto;
+    }
+
+    .nav-center {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .navbar {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .navbar a {
+      color: white;
+      font-size: 1rem;
+      font-weight: 380;
+      text-decoration: none;
+      transition: 0.4s ease;
+      padding: 6px 10px;
+      border-radius: 4px;
+    }
+
+    .navbar a:hover, .navbar a.active {
+      background: white;
+      color: rgb(9, 122, 43);
+    }
+
+    .user {
+      color: white;
+      font-size: 2.5rem;
+      margin-left: auto;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        gap: 0.5rem;
+        justify-content: center;
+      }
+
+      .navbar a {
+        font-size: 0.9rem;
+        padding: 6px 8px;
+      }
+
+      .user {
+        font-size: 1.5rem;
+      }
+    }
+
+    .contact-container {
+      background-color: #fff;
+      border-radius: 24px;
+      box-shadow: 0 12px 40px rgba(13, 140, 23, 0.7);
+      max-width: 900px;
+      width: 100%;
+      margin: auto;
+      padding: 40px;
+      color: #145f3d;
+      text-align: center;
+    }
+
+    .contact-container h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 3rem;
+      color: #2e8b57;
+      margin-bottom: 10px;
+      text-shadow: 0 0 8px #81c784aa;
+    }
+
+    .contact-container p {
+      font-size: 1.25rem;
+      margin-bottom: 30px;
+      font-weight: 500;
+      color: #3a6e3a;
+    }
+
+    .contact-container img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 3px solid #2f7d30;
+      margin-bottom: 35px;
+      box-shadow: 0 8px 25px rgba(46, 139, 87, 0.5);
+    }
+
+    form {
+      text-align: left;
+    }
+
+    form label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+      font-size: 15px;
+      color: #2e7d32;
+    }
+
+    form input, form select, form textarea {
+      width: 100%;
+      padding: 14px 16px;
+      margin-bottom: 25px;
+      border: 2px solid #a6d6a6;
+      border-radius: 14px;
+      font-size: 15px;
+      background-color: white;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+    }
+
+    form input:focus, form select:focus, form textarea:focus {
+      outline: none;
+      border-color: #4caf50;
+      box-shadow: 0 0 10px 2px #4caf50aa;
+      background-color: #f0fff0;
+    }
+
+    form textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .phone-group {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    .phone-group .cc {
+      max-width: 90px;
+      text-align: center;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(90deg, #2e8b57, #145f3d);
+      color: white;
+      font-size: 17px;
+      font-weight: 700;
+      border: none;
+      border-radius: 16px;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(21, 95, 61, 0.6);
+    }
+
+    button[type="submit"]:hover {
+      background: linear-gradient(90deg, #145f3d, #2e8b57);
+      box-shadow: 0 8px 24px rgba(21, 95, 61, 0.85);
+    }
+
+    .footer {
+      background-color: rgb(2, 35, 17);
+      padding: 40px 20px;
+      margin-top: 60px;
+      color: white;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .footer-columns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    .footlinks {
+      margin: 10px;
+      min-width: 200px;
+    }
+
+    .footlinks h4 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      font-family: "Tapestry", serif;
+    }
+
+    .quick a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      margin: 8px 0;
+    }
+
+    .contact div {
+      margin: 8px 0;
+      font-size: 14px;
+    }
+
+    .contact i {
+      margin-right: 8px;
+    }
+
+    .social a {
+      font-size: 20px;
+      margin: 5px;
+      height: 35px;
+      width: 35px;
+      background-color: white;
+      color: rgb(2, 35, 17);
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+
+    .social a:hover {
+      transform: scale(1.2);
+    }
+
+    .end {
+      text-align: center;
+      padding-top: 20px;
+      font-size: 13px;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    @media (max-width: 768px) {
+      .footer-columns {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .footlinks {
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
+
+  <!-- Navbar -->
   <nav>
-    <img class="logo1" src="./logo .jpg" title="DREAM_VACATION" />
-    <ul class="navbar">
-      <li><a href="./index.html">Home</a></li>
-      <li><a href="./destination.html">Destinations</a></li>
-      <li><a href="./budvslux">Budget vs Luxury</a></li>
-      <li><a href="./pickyourvibe.html">Pick Your Vibe</a></li>
-      <li><a href="./reviews.html">Reviews</a></li>
-      <li><a href="./map.html">Map</a></li>
-      <li><a href="./book.html">Book now</a></li>
-    </ul>
+    <img class="logo1" src="./logo .jpg" title="DREAM_VACATION" alt="Logo" />
+    <div class="nav-center">
+      <div class="navbar">
+        <a href="./index.html">Home</a>
+        <a href="./destination.html">Destinations</a>
+        <a href="./budvslux.html">Budget vs Luxury</a>
+        <a href="./pickyourvibe.html">Pick Your Vibe</a>
+        <a href="./reviews.html">Reviews</a>
+        <a href="./map.html">Map</a>
+        <a href="./book.html">Book now</a>
+      </div>
+    </div>
+    <div class="user"><i class="fa-solid fa-circle-user"></i></div>
   </nav>
 
-  <div class="contact-section">
-    <h2 class="h">Book Now!</h2>
-    <form action="https://formspree.io/f/mrbkgrab" method="POST">
-      <label>Full Name</label>
-      <input type="text" name="name" placeholder="Enter your name" required>
+  <!-- Contact Form -->
+  <div class="contact-container">
+    <h1>Let's Connect</h1>
+    <p>We’ll help plan your dream vacation!</p>
+    <img src="https://lohithadamisetti123.github.io/DREAM_VACATION_PLANNER/logo%20.jpg" alt="Beautiful vacation scenery" />
+    <form action="https://formspree.io/f/mrbkgrab" method="POST" novalidate>
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required />
 
-      <label>Email Address</label>
-      <input type="email" name="email" placeholder="you@example.com" required>
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required />
 
       <label>Phone Number</label>
       <div class="phone-group">
-        <input type="text" class="cc" name="country_code" placeholder="+91" required>
-        <input type="tel" name="phone" placeholder="9876543210" required>
+        <input type="text" class="cc" name="country_code" placeholder="+91" required pattern="^\+\d{1,4}$" />
+        <input type="tel" name="phone" placeholder="9876543210" required pattern="^\d{7,15}$" />
       </div>
 
-      <label>Country</label>
-      <select name="country" required>
+      <label for="country">Country</label>
+      <select id="country" name="country" required>
         <option value="">-- Select Your Country --</option>
-        <option value="India">India</option>
-        <option value="USA">USA</option>
-        <option value="Canada">Canada</option>
-        <option value="Australia">Australia</option>
-        <option value="UK">UK</option>
-        <option value="France">France</option>
-        <option value="Germany">Germany</option>
-        <option value="Italy">Italy</option>
-        <option value="Japan">Japan</option>
-        <option value="Brazil">Brazil</option>
-        <option value="Other">Other</option>
+        <option>India</option><option>USA</option><option>UK</option><option>France</option><option>Germany</option>
+        <option>Italy</option><option>Japan</option><option>Brazil</option><option>Australia</option><option>Canada</option>
+        <option>Other</option>
       </select>
 
-      <label>Other Country (if not listed above)</label>
-      <input type="text" name="other_country" placeholder="Enter your country (only if 'Other')" />
+      <label for="other_country">Other Country</label>
+      <input type="text" id="other_country" name="other_country" placeholder="If not listed above" />
 
-      <label>Select your plan</label>
-      <select name="subject" required>
+      <label for="subject">Select your plan</label>
+      <select id="subject" name="subject" required>
         <option value="">-- Select a plan --</option>
         <option value="beach">Beach Vacation</option>
         <option value="luxury">Luxury Trip</option>
@@ -65,36 +340,60 @@
         <option value="custom">Custom Plan</option>
       </select>
 
-      <label>Location</label>
-      <input type="text" name="location" placeholder="Enter Your Destination Place">
+      <label for="location">Location</label>
+      <input type="text" id="location" name="location" placeholder="Enter the place you wanna go" />
 
-      <label>Your Message</label>
-      <textarea name="message" placeholder="Let us know how we can help..." required></textarea>
+      <label for="message">Your Message</label>
+      <textarea id="message" name="message" placeholder="Let us know how we can help..." required></textarea>
 
       <button type="submit">Send Message</button>
     </form>
   </div>
 
+  <!-- Footer -->
   <section class="footer">
-    <div class="foot">
-      <div class="footer-content">
-        <img class="logo2" src="./logo .jpg" width="150px" height="60px" title="DREAM_VACATION" />
+    <div class="footer-content">
+      <div class="footer-columns">
+        <div class="footlinks">
+          <h4>Quick Links:</h4>
+          <ul class="quick">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./destination.html">Destinations</a></li>
+            <li><a href="./budvslux.html">Budget vs Luxury</a></li>
+            <li><a href="./pickyourvibe.html">Pick Your Vibe</a></li>
+            <li><a href="./reviews.html">Reviews</a></li>
+            <li><a href="./map.html">Map</a></li>
+            <li><a href="./book.html">Book now</a></li>
+          </ul>
+        </div>
+
+        <div class="footlinks">
+          <h4>Contact us:</h4>
+          <div class="contact">
+            <div><i class="fa-solid fa-location-dot"></i> Jubilee Hills, Hyderabad</div>
+            <div><i class="fa-solid fa-phone"></i> +91 9876543219</div>
+            <div><i class="fa-solid fa-envelope"></i> dreamvacation@gmail.com</div>
+          </div>
+        </div>
+
         <div class="footlinks">
           <h4>Connect:</h4>
-        </div>
-        <div class="social">
-          <a href="https://www.facebook.com/login.php/" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
-          <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
-          <a href="https://x.com/i/flow/login" target="_blank"><i class="fa-brands fa-square-x-twitter"></i></a>
-          <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-square-youtube"></i></a>
-          <a href="https://accounts.google.com/signin" target="_blank"><i class="fa-solid fa-square-envelope"></i></a>
+          <div class="social">
+            <a href="https://facebook.com"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://x.com"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://youtube.com"><i class="fa-brands fa-youtube"></i></a>
+            <a href="mailto:dreamvacation@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="end">
-      <p>Copyright © 2025 DREAM_VACATION_PLANNER All Rights Reserved.<br>
-        Website developed by team: 'WebWizards'</p>
+
+      <div class="end">
+        <p>Copyright © 2025 DREAM_VACATION_PLANNER. All Rights Reserved.<br />
+          Website developed by team: 'WebWizards'</p>
+      </div>
     </div>
   </section>
+
 </body>
 </html>
