@@ -1,30 +1,103 @@
-/* ----- Reviews Section ----- */
+/* Reset & Global Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: sans-serif;
-    background-image: linear-gradient(to right,rgba(5, 73, 20,0.3),rgba(13, 135, 13,0.3));
 
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #8ff5f5;
 }
 
+/* Navigation Bar (Header) */
+nav {
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgb(6, 33, 3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2vw;
+  z-index: 1000;
+}
+
+.logo1 {
+  width: 12vw;
+  min-width: 180px;
+  max-width: 180px;
+  height: auto;
+}
+
+.nav-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar a {
+  color: white;
+  font-size: 1rem;
+  font-weight: 530;
+  text-decoration: none;
+  transition: ease 0.40s;
+  font-family: sans-serif;
+  padding: 5px 6px;
+  border-radius: 4px;
+  min-width: max-content;
+  margin-top: 2%;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  background: white;
+  color: rgb(9, 122, 43);
+}
+
+.user {
+  color: white;
+  font-size: 3rem;
+  margin-left: auto;
+}
+
+/* Main Section */
 .reviews-section {
-  padding: 80px 20px;
+  background: linear-gradient(to right, white, #9ce7f1);
+  padding: 150px 20px 50px; /* Added top padding to compensate for fixed nav */
   text-align: center;
 }
 
+/* Section Titles */
 .section-title {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 30px;
-  color: #1a3d1a;
+  color: #2c3e50;
   font-family: cursive;
 }
 
+.sub-heading {
+  font-size: 1.6rem;
+  margin: 40px 0 20px;
+  color: #00796b;
+  font-weight: bold;
+}
+
+/* Container */
 .reviews-container {
   display: flex;
   flex-wrap: wrap;
@@ -32,142 +105,114 @@ body {
   justify-content: center;
 }
 
+/* Individual review card */
 .review-card {
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(145deg, #ffffff, #e3f2fd);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   padding: 20px;
   width: 300px;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease;
+  border-left: 6px solid #4db6ac;
 }
 
 .review-card:hover {
   transform: scale(1.05);
+  background: linear-gradient(145deg, #e1f5fe, #ffffff);
 }
 
 .review-card h3 {
   margin-bottom: 10px;
-  color: #34495e;
+  color: #00695c;
+  font-weight: bold;
 }
 
 .review-card p {
   font-style: italic;
-  color: #555;
+  color: #455a64;
   margin-bottom: 10px;
 }
 
 .stars {
-  font-size: 1.2rem;
-  color: #f1c40f;
+  font-size: 1.3rem;
+  color: #ffb300;
 }
 
-@media (max-width: 1000px) {
-  .review-card {
-    width: 45%;
-  }
-}
-
-@media (max-width: 600px) {
-  .review-card {
-    width: 100%;
-  }
-}
-
-/* ----- Header (Navbar) ----- */
-nav {
-  width: 100%;
-  height: 70px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: rgb(6, 33, 3);
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: 0 0%;
-  z-index: 999;
-}
-
-nav .logo1 {
-  width: 180px;
-}
-
-nav ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.navbar li {
-  margin-left: 30px;
-}
-
-.navbar a {
-  background-color: rgb(14, 87, 14);
-  color: white;
-  font-size: 16px;
-  padding: 10px 18px;
-  border-radius: 5px;
-  font-weight: 530;
-  font-family: sans-serif;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.navbar a:hover,
-.navbar a.active {
-  background-color: white;
-  color: rgb(9, 122, 43);
-}
-
-/* ----- Footer ----- */
+/* Footer */
 .footer {
   background-color: rgb(2, 35, 17);
-  padding: 30px 20px 10px;
-  color: white;
-  margin-top: 50px;
-}
-
-.footer-content {
+  padding: 20px 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
+  width: 100%;
+}
+
+.footer-content {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .logo2 {
-  width: 150px;
-  height: 60px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.footer-columns {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.footlinks {
+  color: white;
+  text-align: left;
+  margin: 10px 20px;
+  min-width: 200px;
 }
 
 .footlinks h4 {
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 500;
-  margin: 15px 0 5px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Tapestry", serif;
+  margin-bottom: 10px;
+  margin-right: 40px;
 }
 
-.social {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 10px;
+.quick a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin: 15px 15px;
+}
+
+.contact div {
+  margin: 5px 0;
+  color: white;
+  padding: 5px;
+}
+
+.contact i {
+  padding: 10px;
+  font-size: 20px;
 }
 
 .social a {
   font-size: 20px;
+  margin: 5px;
   height: 30px;
   width: 30px;
   color: rgb(2, 35, 17);
   background-color: white;
   display: inline-flex;
-  align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  text-decoration: none;
+  align-items: center;
+  border-radius: 20px;
   transition: transform 0.3s ease;
+  text-decoration: none;
 }
 
 .social a:hover {
@@ -176,7 +221,7 @@ nav ul {
 
 .end {
   text-align: center;
-  margin-top: 20px;
+  padding-top: 20px;
 }
 
 .end p {
@@ -185,4 +230,39 @@ nav ul {
   letter-spacing: 1px;
   font-weight: 700;
   font-family: 'Courier New', Courier, monospace;
+}
+
+/* Responsive Styles */
+@media (max-width: 1000px) {
+  .review-card {
+    width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .navbar a {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
+
+  .footer-columns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footlinks {
+    text-align: center;
+    margin: 15px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .review-card {
+    width: 100%;
+  }
 }
